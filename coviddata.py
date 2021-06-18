@@ -22,11 +22,19 @@ class CovidData:
         for prov in provinces:
             if prov['code'].upper() == self.__province:
                 self.__population = prov['population']
-                break
+                break  
+
+    @property
+    def data(self):
+        return self.__data
 
     @property
     def __latest_data(self):
         return self.__data[-1]
+
+    @property
+    def latest_data(self):
+        return self.__latest_data;
 
     @property
     def __last_week_data(self):
